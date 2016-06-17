@@ -16,7 +16,7 @@ Those anonymous voices who provided me guidance and reasurrance when I was feeli
 4. Connecting learners
 5. Styling consistently. 
 
-And have just experienced how effective their method is.
+And I just experienced how effective their method is.
 
 ### My first Reviewer Certification
 ![My First Reviewer Certification](http://throw.rocks/android-code-reviews/first-training-certification.PNG)
