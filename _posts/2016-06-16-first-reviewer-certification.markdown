@@ -20,6 +20,4 @@ Those anonymous voices who provided me guidance when I was feeling about to brea
 4. Connecting learners
 5. Styling consistently. 
 
-And I just experienced how effective their method is.
-
-Now I look forward to complete more Reviewer Certifications and start working on real code reviews. I look forward to make a difference in the lives of the students who are learning Android to embark in new paths in their careers. And I can do that while practicing my new skills and learning from them without any of the hassles of developing projects on top of my full-time responsibilities at work.
+And I just witnessed how effective their method is. Now I look forward to complete more Reviewer Certifications and to start working on real code reviews. I look forward to make a difference in the lives of the students. It seems like the perfect opportunity to branch out in my field without burning out by developing projects on top of my current responsibilities at work. I will keep you all posted on this new experience.
