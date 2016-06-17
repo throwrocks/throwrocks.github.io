@@ -21,4 +21,4 @@ And I just experienced how effective their method is.
 ### My first Reviewer Certification
 ![My First Reviewer Certification](http://throw.rocks/android-code-reviews/first-training-certification.PNG)
 
-Now I look forward to complete more Reviewer Certifications and to hopefully to do some real code reviews. I look forward to making a difference in the lives of the students who are learning Android to embark in new paths in their careers. All while practicing my new skills and learning from others without any of the hassles of developing projects on top of my full-time responsibilities at work.
+Now I look forward to complete more Reviewer Certifications and start working on some real code reviews. I look forward to making a difference in the lives of the students who are learning Android to embark in new paths in their careers. All while practicing my new skills and learning from others without any of the hassles of developing projects on top of my full-time responsibilities at work.
