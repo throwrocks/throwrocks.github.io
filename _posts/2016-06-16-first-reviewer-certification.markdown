@@ -8,7 +8,7 @@ I'm excited to be starting the path to become an Udacity Android Code Reviewer. 
 
 I toyed with the idea of working on side projects and publishing them on the Play Store but I don't really want to develop apps for the consumer market. If I ever develop production apps in Android I will focus on custom business solutions. At the moment, I just don't want to deal with clients or starting a business or doing contract work. So I started reading about the people who evaluated my projects during the Nanodegree, the Udacity Code Reviewers.
 
-Those anonymous voices who provided me guidance and reasurrance when I was feeling about to break my computer trying to set up my first Content Provider, or when I was struggling to grasp the inner workings of the Broadcast Receivers. Those Code Reviewers are a new type of educators. They are trained in a reviewing method that embraces a simple mantra:
+Those anonymous voices who provided me guidance and reasurrance when I was feeling about to break my computer trying to set up the first Content Provider, or when I was struggling to grasp the inner workings of the Broadcast Receiver. Those Code Reviewers are a new type of educators. They are trained in a reviewing method that embraces five simple and powerful guidelines:
 
 1. Simplifying code
 2. Practicing kindnesss
