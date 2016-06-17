@@ -14,6 +14,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "throwrocks.github.io" # the base hostname & protocol for your site
 twitter_username: throwerror
 github_username:  throwrocks
+comments: true
 
 # Build settings
 markdown: kramdown
