@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>throwrocks.github.io</title>
+    <description>The personal site of José. A FileMaker Certified Developer working with Food Services at Dallas ISD who rides a longboard after work and learns Android development at night.
+</description>
+    <link>throwrocks.github.io/</link>
+    <atom:link href="throwrocks.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 17 Jun 2016 07:35:07 -0500</pubDate>
+    <lastBuildDate>Fri, 17 Jun 2016 07:35:07 -0500</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>My First Udacity Reviewer Certification</title>
+        <description>&lt;p&gt;&lt;img src=&quot;http://throw.rocks/android-code-reviews/first-training-certification.PNG&quot; alt=&quot;My First Reviewer Certification&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’m excited to be starting the path to become an Udacity Android Code Reviewer. Earlier this month, after completing the Android Developer Nanodegree, I wondered what to do with the new skills I learned. At my workplace, we mostly develop in FileMaker Pro and we’re so busy with new projects and support that including Android in our stack just because I learned it makes no sense.&lt;/p&gt;
+
+&lt;p&gt;I toyed with the idea of working on side projects and publishing them on the Play Store but I don’t really want to develop apps for the consumer market. If I ever develop production apps in Android I will focus on custom business solutions. But at the moment, I just don’t want to deal with clients or starting a business or doing contract work. So I started reading about the people who evaluated my projects during the Nanodegree, the Udacity Code Reviewers.&lt;/p&gt;
+
+&lt;p&gt;Those anonymous voices who provided me guidance when I was feeling about to break my computer. I remember how frustrated I felt trying to set up the first Content Provider, or when I was struggling to grasp the inner workings of the Broadcast Receiver. But those Code Reviewers helped me stay focused by providing valuable feedback and reasurrance. The Udacity Code Reviewers are a new type of educators, trained in a reviewing method that embraces five simple and powerful guidelines:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Simplifying code&lt;/li&gt;
+  &lt;li&gt;Practicing kindnesss&lt;/li&gt;
+  &lt;li&gt;Explaining why with examples&lt;/li&gt;
+  &lt;li&gt;Connecting learners&lt;/li&gt;
+  &lt;li&gt;Styling consistently.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;And I just experienced how effective their method is.&lt;/p&gt;
+
+&lt;p&gt;Now I look forward to complete more Reviewer Certifications and start working on real code reviews. I look forward to make a difference in the lives of the students who are learning Android to embark in new paths in their careers. And I can do that while practicing my new skills and learning from them without any of the hassles of developing projects on top of my full-time responsibilities at work.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 16 Jun 2016 16:54:57 -0500</pubDate>
+        <link>throwrocks.github.io/code/reviewing/2016/06/16/first-reviewer-certification.html</link>
+        <guid isPermaLink="true">throwrocks.github.io/code/reviewing/2016/06/16/first-reviewer-certification.html</guid>
+        
+        
+        <category>code</category>
+        
+        <category>reviewing</category>
+        
+      </item>
+    
+  </channel>
+</rss>

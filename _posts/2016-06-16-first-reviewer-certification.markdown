@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "My First Udacity Reviewer Certification"
 date:   2016-06-16 16:54:57 -0500
 categories: code reviewing
