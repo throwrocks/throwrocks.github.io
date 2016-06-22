@@ -1,23 +1,19 @@
 ---
 layout: post
 comments: true
-title:  "My First Udacity Reviewer Certification"
-date:   2016-06-16 16:54:57 -0500
-categories: code reviewing
+title:  "Android Basics Nanodegree by Udacity & Google Released Today"
+date:   2016-06-21 16:00:00 -0500
+categories: android
 ---
 
-![My First Reviewer Certification](http://throw.rocks/android-code-reviews/first-training-certification.PNG)
+The new Udacity Android Basics Nanodegree, co-created by Google, is now available for enrollment. This Nanodegree was created to fill the gap between complete beginners and the intermediate Android Developer Nanodegree. 
 
-I'm excited to be starting the path to become an Udacity Android Code Reviewer. Earlier this month, after completing the Android Developer Nanodegree, I wondered what to do with the new skills I learned. At my workplace, we mostly develop in FileMaker Pro and we're so busy with new projects and support that including Android in our stack just because I learned it makes no sense. 
+The only requirements are to be
 
-I toyed with the idea of working on side projects and publishing them on the Play Store but I don't really want to develop apps for the consumer market. If I ever develop production apps in Android I will focus on custom business solutions. But at the moment, I just don't want to deal with clients or starting a business or doing contract work. So I started reading about the people who evaluated my projects during the Nanodegree, the Udacity Code Reviewers.
+> ...motivated, and possess basic computer skills like locating and opening files, and downloading and running programs.
 
-Those anonymous voices who provided me guidance when I was feeling about to break my computer. I remember how frustrated I felt trying to set up the first Content Provider, or when I was struggling to grasp the inner workings of the Broadcast Receiver. But those Code Reviewers helped me stay focused by providing valuable feedback and reasurrance. The Udacity Code Reviewers are a new type of educators, trained in a reviewing method that embraces five simple and powerful guidelines:
+The program courses will cover the Java programming language, the Android Studio IDE, and how to start developing Android applications. To sweeten the deal, Udacity is awarding a full scholarship for the Android Developer Nanodegree to the first 50 students who finish. That's an incredible incentive to work hard and complete it fast.
 
-1. Simplifying code
-2. Practicing kindnesss
-3. Explaining why with examples
-4. Connecting learners
-5. Styling consistently. 
+I'm excited for the students who are beginning this program. As a Certified Reviewer, I look forward to help them succeed in their projects. 
 
-And I just witnessed how effective their method is. Now I look forward to complete more Reviewer Certifications and to start working on real code reviews. I look forward to make a difference in the lives of the students. It seems like the perfect opportunity to branch out in my field without burning out by developing projects on top of my current responsibilities at work. I will keep you all posted on this new experience.
+You can visit the official page here ->  <https://www.udacity.com/course/android-basics-nanodegree-by-google--nd803>
