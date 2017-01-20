@@ -1,6 +1,6 @@
 ---
 layout: page
-comments: true
+comments: false
 title: Create a New Project
 permalink: fm-invoices-create-new-project.html
 ---

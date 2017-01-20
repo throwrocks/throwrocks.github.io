@@ -1,8 +1,8 @@
 ---
 layout: page
-comments: true
+comments: false
 title: Enable Auto Import
-permalink: fm-invoices-create-new-project.html
+permalink: fm-invoices-enable-auto-import.html
 ---
 
 #### Why Auto Import?
@@ -23,13 +23,13 @@ What will happen then is that when you copy some code that uses classes from pac
 
 For example, later on, you will work on implementing an `API` class, and you will have to copy a method that uses the `URL` class.  Specifically 
 
-```
+```java
 URL url = new URL(builtUri.toString());
 ```
 
 As soon as you copy that line of code, Android Studio will add the following import statement to the top of your class.
 
-```
+```java
 import java.net.URL;
 ```
 
@@ -48,7 +48,7 @@ But don't worry, these errors are easy to catch because your app will not even r
 
 Make sure you don't copy my package declaration. 
 
-```
+```java
 package rocks.athrow.fm_invoices;
 ```
 
