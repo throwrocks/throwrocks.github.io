@@ -3,21 +3,13 @@ layout: default
 ---
 
 <div class="home">
-
-  <h1 class="page-heading">Posts</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
+   <h1 class="page-heading">How to Integrate Android with FileMaker Server</h1>
+   <ul>
+      <!--<li>
+         <a class="page-link" href="{{ site.baseurl }}{% link fm-invoices/01-create-new-project.markdown %}">Introduction</a>
+      </li>-->
       <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
+         <a class="page-link" href="{{ site.baseurl }}{% link fm-invoices/01-create-new-project.markdown %}">Create a new Project</a>
       </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+   </ul>
 </div>
