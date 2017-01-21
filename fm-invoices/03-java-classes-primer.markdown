@@ -8,7 +8,9 @@ permalink: fm-invoices-your-first-class-api-response.html
 
 #### What is a class?
 
-Since FileMaker is not an object-oriented platform, you may be wondering, what is a class? The simplest definition of a class is:
+As FileMaker developers we don't have to deal with classes. We think in terms of entities and their attributes, and we model them using tables and fields. So before we start creating our first class, let's go over what are Java classes and how they work.
+
+The simplest definition of a class is:
 
 >A class is the blueprint from which individual objects are created.
 >[Source](https://docs.oracle.com/javase/tutorial/java/concepts/class.html)
@@ -20,16 +22,11 @@ Now that we know that a class is a blueprint for creating objects, what exactly 
 >An object stores its state in fields (variables in some programming languages) and exposes its behavior through methods (functions in some programming languages).
 >[Source](https://docs.oracle.com/javase/tutorial/java/concepts/object.html)
 
-#### What does this mean?
+#### Using a FileMaker table to understand classes
 
-Let's look at our `sample_data` file in FileMaker. We have a table for customers. That table is like a blueprint to create customer records. If we were to translate our customers table to a Java class we would start like this:
+Let's look at our `sample_data` file in FileMaker. We have a table for customers. That table is like a blueprint to create customer records. If we were to translate our customers table to a Java class we could start writing it like this:
 
-```
-/**
- * Customers
- * A class to manage customers
- */
- 
+```java
 public class Customers {
     // The customer fields
     int id;
@@ -39,7 +36,9 @@ public class Customers {
     // TODO: Add all other fields here
 }
 ```
-Notice the customer fields. Just like we define the type of our FileMaker fields as Text and Number, we define our class fields as Java types like String and int.
+Notice the comment in the first line inside the curly braces. You should be familiar with that type of single line comment. It's the same format we use in FileMaker calculations.
+
+Below the comment, we declared the class fields. Notice that before each field, we declare their type. Just like we define the type of our FileMaker fields, for example as Text or Number, we define our class fields as Java types like String or int.
 
 #### So how do I create customer objects?
 
@@ -53,7 +52,7 @@ To create Customer objects your class needs a constructor.
 
 It's very easy to create a Constructor. They look similar to FileMaker calculation functions, or custom functions.
 
-```
+```java
     public Customers() {
     }
 ```
@@ -62,7 +61,7 @@ The main difference is that you can provide an access modifier like `public` or 
 
 Let's write at a constructor that does a bit more than just creating an object.
 
-```
+```java
     public Customers(int id, String firstName, String lastName, String company) {
         this.id = id;
         this.firstName = firstName;
@@ -76,7 +75,7 @@ This constructor accepts four arguments. The customer id, first name, last name,
 
 Now that we can create customer objects, how do we get and edit the customer data of an existing customer object? We can create some basic methods commonly known as getters and setters.
 
-```
+```java
     public int getId() {
         return id;
     }
@@ -108,14 +107,14 @@ Now that we can create customer objects, how do we get and edit the customer dat
     public void setCompany(String company) {
         this.company = company;
     }
-```
+```java
 Notice the names of these methods. They are very straighforward. Some of them set data, and others get data. The set methods accept an argument for the data that you want to set. And the get methods don't have an argument because they just return the data from a particular field.
 
 #### Private fields
 
 Now that we have methods to access and modify the customer data, we don't need to give direct access to our fields. After creating a customer object, we can set and get its data using the getter and setter methods. By making our fields private, we provide encapsulation. We take complete control of other classes can interact with our objects.
 
-```
+```java
 public class Customers {
     // The customer fields
     private int id;
