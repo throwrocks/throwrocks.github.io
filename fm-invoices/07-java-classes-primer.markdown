@@ -107,7 +107,8 @@ Now that we can create customer objects, how do we get and edit the customer dat
     public void setCompany(String company) {
         this.company = company;
     }
-```java
+```
+
 Notice the names of these methods. They are very straighforward. Some of them set data, and others get data. The set methods accept an argument for the data that you want to set. And the get methods don't have an argument because they just return the data from a particular field.
 
 #### Private fields

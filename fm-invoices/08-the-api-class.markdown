@@ -10,10 +10,6 @@ permalink: fm-invoices-the-api-class.html
 ```java
 package rocks.athrow.fm_invoices.data;
 
-/**
- * Created by jose on 1/18/17.
- */
-
 public final class API {
     private static final String API_HOST = "";
     private static final String API_KEY = "";
@@ -34,12 +30,7 @@ public final class API {
 Add the following method to your API class. If you set up the Auto Import correctly, you will see.
 
 ```java
-    /**
-     * httpConnect
-     *
-     * @param queryURL the query URL
-     * @return an APIResponse object
-     */
+
     private static APIResponse httpConnect(String queryURL) {
         APIResponse apiResponse = new APIResponse();
         HttpURLConnection urlConnection = null;
