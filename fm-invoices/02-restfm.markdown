@@ -29,7 +29,7 @@ Once you complete the installation and the RESTfm report page indicates no error
 
 Now let's create an API Key for your Android app. Open the `RESTfm.ini.php` file and locate the following section around line 108.
 
-```php
+```
 /*
  * List of API keys associated with a username and password.
  */
