@@ -126,7 +126,7 @@ public class Customers {
 }
 ```
 
-### Congratulations!
+#### Congratulations!
 
 We'll come back to this customer class later because we will need it in our app. But first, let's work on writing a class that will help us connect our app with the FileMaker server so we can download some data.
 
@@ -135,5 +135,3 @@ We'll come back to this customer class later because we will need it in our app.
 <br/>
 
 Next: <a href="/fm-invoices-the-api-class.html">Create the API class</a>
-
-
