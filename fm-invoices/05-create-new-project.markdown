@@ -37,3 +37,8 @@ Finally, Android Studio will help you set up some details about your `MainActivi
 Congratulations, you have created your first Android project! Your screen should look like this now. 
 ![Congratulations](http://throw.rocks/fm-invoices/05_create_project/create_new_project_06_congratulations.png)
 
+<br/>
+<hr/>
+<br/>
+
+Next: <a href="/fm-invoices-enable-auto-import.html">Enable Auto Import</a>

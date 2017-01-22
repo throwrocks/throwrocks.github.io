@@ -56,9 +56,9 @@ You can set your layout View Mode to Form, List, or Table. It doesn't matter. I 
 
 ![The Customers API layout](http://throw.rocks/fm-invoices/03_host_sample_data/host_sample_data_03_api_customers_layout.png)
 
-#### Add the fmphp Extended Privilege
+#### Create the Account 
 
-We're almost ready to test our API. Just one more step. We need to add the fmphp Extended Privilege to the Privilege Set of the API user that we set in the $config['keys'] variable of our RESTfm.ini.php file.
+Open the FileMaker Security settings and create a new account with the [Data Entry Only] Privilege Set. The account name and password has to match the values you set in the RESTfm.ini.php file. 
 
 ```
 $config['keys'] = array (
@@ -66,9 +66,18 @@ $config['keys'] = array (
 );
 ```
 
-In my case, the user Jose has [Data Entry Access] Privilege Set. So I'm adding the fmphp Extended Privilege to the [Data Entry Access] Privilege Set.
+![FileMaker Account](http://throw.rocks/fm-invoices/03_host_sample_data/host_sample_data_05_user.png)
+
+Notice that my account name is Jose and my password is MyPassword. So I created the account with the same name and password. By doing so, RESTfm will know that the API Key "71c717c4-d8e3-485f-a815-f5928f1f7a3e" belongs to Jose. And it will handle authenticating the user without having to provide the password.
+
+#### Add the fmphp Extended Privilege
+
+We're almost ready to test our API. Just one more step. We need to add the fmphp Extended Privilege to the Privilege Set of the API user that we set in the $config['keys'] variable of our RESTfm.ini.php file.
+
+In my case, the user Jose has [Data Entry Only] Privilege Set. So I'm adding the fmphp Extended Privilege to the [Data Entry Only] Privilege Set.
 
 ![fmphp Extended Privilege](http://throw.rocks/fm-invoices/03_host_sample_data/host_sample_data_04_php_access.png)
+
 
 
 #### Testing the API from the browser
@@ -83,7 +92,7 @@ For example:
 
 `http://throw.rocks/RESTfm/sample_date/layout/api_customers.json?RFMmax=1&RFMkey=71c717c4-d8e3-485f-a815-f5928f1f7a3e`
 
-Your browser should respond with the following output:
+And your browser should respond with the following output:
 
 ```json
 {  
@@ -341,4 +350,10 @@ I know there's a lot of information in the response. But don't worry about it. W
 
 ### Congratulations!
 
-You are now ready to install Android Studio and to start developing an Android app.
+You are now ready to install Android Studio.
+
+<br/>
+<hr/>
+<br/>
+
+Next: <a href="/fm-invoices-install-android-studio.html">Install Android Studio</a>

@@ -5,7 +5,7 @@ title: Turn FileMaker Server into a JSON API with RESTfm
 permalink: fm-invoices-restfm.html
 ---
 
-We're going to use RESTfm because it can transform the XML output from the FileMaker Custom Web Publishing Engine into JSON, which is very easy to consume in Java. Also, because it allows us to create API Keys for our users, so our Android app doesn't have to pass the actual username and password of oour FileMaker solution.
+We're going to use RESTfm because it can transform the XML output from the FileMaker Custom Web Publishing Engine into JSON, which is very easy to consume in Java. Also, because it allows us to create API Keys for our users, so our Android app doesn't have to pass the actual username and password of our FileMaker database file.
 
 #### What is RESTfm?
 
@@ -23,13 +23,13 @@ Please follow the instructions to install RESTfm in your platform.
 
 [Install on MacOSx](http://www.restfm.com/restfm-manual/install/quick-install-apple-os-x)
 
-Once you complete the installation and the RESTfm report page indicates no errors, you will be ready to start developing the app.
+Continue once you complete the installation and the RESTfm report page indicates no errors.
 
 #### Create an API Key
 
 Now let's create an API Key for your Android app. Open the `RESTfm.ini.php` file and locate the following section around line 108.
 
-```
+```php
 /*
  * List of API keys associated with a username and password.
  */
@@ -40,7 +40,7 @@ $config['keys'] = array (
 
 Uncomment the line inside the array and set your information. You can make up your API Key, or you can use an application to create one for you. For example, you can use this free [API Key Generator](https://codepen.io/corenominal/pen/rxOmMJ). 
 
-You will also need to set the FileMaker username and password for associated to the API Key. Let's place all the information here first and then we'll create the account in FileMaker.
+You will also need to set the FileMaker username and password associated to the API Key. Let's place all the information here first and then we'll create the account in FileMaker.
 
 Your keys configuration should look something like this:
 
@@ -51,4 +51,11 @@ $config['keys'] = array (
 ```
 #### Congratulations!
 
-You have successfully installed and configured RESTfm. Let's now install Android Studio and start developing an app.
+You have successfully installed and configured RESTfm. Let's now host the FileMaker Server Sample file.
+
+
+<br/>
+<hr/>
+<br/>
+
+Next: <a href="/fm-invoices-host-filemaker-server-sample-data.html">Host the FileMaker Server Sample File</a>

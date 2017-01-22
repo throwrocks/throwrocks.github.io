@@ -1,8 +1,8 @@
 ---
 layout: page
 comments: false
-title: Java classes primer
-permalink: fm-invoices-your-first-class-api-response.html
+title: A primer on Java classes
+permalink: fm-invoices-java-classes-primer.html
 ---
 
 
@@ -130,6 +130,10 @@ public class Customers {
 
 We'll come back to this customer class later because we will need it in our app. But first, let's work on writing a class that will help us connect our app with the FileMaker server so we can download some data.
 
+<br/>
+<hr/>
+<br/>
 
+Next: <a href="/fm-invoices-the-api-class.html">Create the API class</a>
 
 

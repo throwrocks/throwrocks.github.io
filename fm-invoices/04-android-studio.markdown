@@ -14,11 +14,11 @@ To install Android Studio, you have a few options.
 
 #### Learn with Udacity
 
-You can sign up for the free course [How to Install Android Studio](https://www.udacity.com/course/how-to-install-android-studio--ud808) by Udacity. By signing up, you will get access to the video tutorials and the course material. And you will also get access to the free catalog of classes for Android and other technologies.  You can how the classroom looks below:
+You can sign up for the free course [How to Install Android Studio](https://www.udacity.com/course/how-to-install-android-studio--ud808) by Udacity. By signing up, you will get access to the video tutorials and the course material.  You can see how the classroom looks below:
 
 ![The classroom](http://throw.rocks/fm-invoices/04_install_android_studio/install-android-studio_01_udacity.png)
 
-If you don't want to sign up with Udacity, you can still watch the video of the course on Youtube.
+If you don't want to sign up with Udacity, you can still watch the course video on Youtube.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5wxDdtSu9Q" frameborder="0" allowfullscreen></iframe>
 
@@ -42,4 +42,10 @@ If you don't want to sign up with Udacity, you can still watch the video of the 
 
 #### Congratulations!
 
-Let's get started.
+Let's start developing our Android app.
+
+<br/>
+<hr/>
+<br/>
+
+Next: <a href="/fm-invoices-create-new-project.html">Create a New Project</a>

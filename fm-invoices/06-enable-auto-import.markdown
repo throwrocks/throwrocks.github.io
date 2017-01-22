@@ -56,7 +56,10 @@ Since you package name will probably be different, if you paste my package decla
 
 #### Congratulations!
 
-You are now ready to start developing an Android app that connects to FileMaker Server.
+You are now ready to start developing an Android app that connects to FileMaker Server. But first, a short primer on Java classes.
 
+<br/>
+<hr/>
+<br/>
 
-
+Next: <a href="/fm-invoices-java-classes-primer.html">A primer on Java classes</a>
