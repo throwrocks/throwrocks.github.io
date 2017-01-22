@@ -37,7 +37,7 @@ So every time we call the API, we will get both a status code and a text result.
 
 Let's get started. Create a new class inside the data package.
 
-![Create a new class](http://throw.rocks/fm-invoices/08_data/data_04_create_new_class_api)
+![Create a new class](http://throw.rocks/fm-invoices/08_data/data_04_create_new_class_api.png)
 
 Name the class APIResponse.
 
