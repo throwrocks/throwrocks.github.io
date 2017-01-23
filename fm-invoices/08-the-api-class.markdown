@@ -5,9 +5,23 @@ title: Create the API class
 permalink: fm-invoices-the-api-class.html
 ---
 
+In this tutorial we will create a data package that will contain all our data related classes. We will also create the APIResponse and API classes that will allow us to connect to our FileMaker Server and return a response.
+
+#### What is a package?
+
+>A package is a grouping of related types providing access protection and name space management. 
+>
+>[Source](https://docs.oracle.com/javase/tutorial/java/package/packages.html)
+
+It's a good practice to organize related classes in their own package. It makes your code easier to navigate and to use. 
+
 #### Create the data package
 
+Right click on our main package, then click on *New*, and then on *Package*.
+
 ![Create a new package](http://throw.rocks/fm-invoices/08_data/data_01_create_package.png)
+
+Name it `data` and click *Ok*.
 
 ![Name the package](http://throw.rocks/fm-invoices/08_data/data_02_create_package_name.png)
 
@@ -148,7 +162,7 @@ public final class API {
 
 #### Add the httpConnect method
 
-Add the following method to your API class. If you set up the Auto Import correctly, you will see.
+Add the following method to your API class.
 
 ```java
 

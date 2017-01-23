@@ -227,7 +227,7 @@ jsonArray.getJSONObject(0).getString("Customer)
 
 ![getCompany](http://throw.rocks/fm-invoices/09_unit_test_api/unit_test_api_17_get_company.png)
 
-#### Loop through the JSONArray
+Now that we know how to parse the JSON, let's write a test that validates some of the fields.
 
 ```java
     @Test
@@ -245,11 +245,9 @@ jsonArray.getJSONObject(0).getString("Customer)
                 JSONObject jsonObject = new JSONObject(responseText);
                 JSONArray jsonArray = jsonObject.getJSONArray("data");
                 JSONObject customerRecord = jsonArray.getJSONObject(0);
-                String firstName = customerRecord.getString("First");
-                String lastName = customerRecord.getString("Last");
+                int id = customerRecord.getInt("CUSTOMER ID MATCH FIELD");
                 String company = customerRecord.getString("Company");
-                assertFalse(firstName.isEmpty());
-                assertFalse(lastName.isEmpty());
+                assertFalse(id != 0);
                 assertFalse(company.isEmpty());
             } catch (JSONException e) {
                 assertFalse(true);
@@ -257,3 +255,66 @@ jsonArray.getJSONObject(0).getString("Customer)
         }
     }
 ```
+
+Notice we're creating a JSONObject named `customerRecord` from the first record in our array (0), and then we are setting the `id` and the `company` variables using the corresponding get methods (getInt() and getString()). Then, we write the assertions to make our test pass if the id does not equal 0 and if the company name is not empty.
+
+Let's run the test. If you get any assertion errors then use the *Debugger* and the *Evaluate Expression* window to examine the data.
+
+#### Loop through the JSONArray
+
+Finally, let's write a test that loops through the array. This is crucial because once we receive the JSON from FilMaker we will need to loop through it get the individual records and do something with them. The following test introduces a for loop to perform the assertions on all the customers records.
+
+```java
+    @Test
+    public void validateAllCustomerRecord() {
+        APIResponse apiResponse;
+        apiResponse = API.getCustomers(0);
+        int responseCode = apiResponse.getResponseCode();
+        String responseText = apiResponse.getResponseText();
+        if (responseCode != 200) {
+            System.out.println(responseCode);
+            System.out.println(responseText);
+            assertFalse(true);
+        } else {
+            try {
+                JSONObject jsonObject = new JSONObject(responseText);
+                JSONArray jsonArray = jsonObject.getJSONArray("data");
+                int countRecords = jsonArray.length();
+                assertTrue(countRecords > 0);
+                for (int i = 0; i < countRecords; i++) {
+                    JSONObject customerRecord = jsonArray.getJSONObject(0);
+                    int id = customerRecord.getInt("CUSTOMER ID MATCH FIELD");
+                    String company = customerRecord.getString("Company");
+                    assertFalse(id != 0);
+                    assertFalse(company.isEmpty());
+                }
+            } catch (JSONException e) {
+                assertFalse(true);
+            }
+        }
+    }
+```
+
+Let's go over it. This time we are setting the `jsonArray.length()` to the `countRecords` variable. We will use this variable in our loop to know when to exit it. We add an assertion to make sure that our count is over 0. Then we go into a for loop to evaluate the values for each individual record. For your reference, below is the basic structure of a [for loop](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/for.html):
+
+```java
+for (initialization; termination; increment) {
+    statement(s)
+}
+```
+
+This is how we will use it:
+
+```java
+ for (int i = 0; i < countRecords; i++) {
+     // Our statements
+}
+```
+
+We start by declaring the `i` (counter) variable as 0. Then, as long as `i` is less than `countRecords`, we will execute the statements. Finally, we will increment the `i` variable by 1, using the `++` operator, which is the same as writing `i = i + 1`.
+
+Let's run the test now. If you have get any assertion errors, that means that one of your records either doesn't have an id, or the company name is missing.
+
+#### Congratulations!
+
+You learned how to write unit tests, and how to call our API class and parse the response. We will soon use the code in these tests to call the API from our Android app and populate a list of customers. Next, let's start building the Customers list layout.
