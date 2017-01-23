@@ -5,14 +5,57 @@ title: Customer Adapter
 permalink: fm-invoices-customer-adapter
 ---
 
-#### Add the support library
+#### Adapters
+
+In FileMaker, we display data using Layouts in different View Modes; Form View, List View, and Table View. By setting a Layout to Form View, we get access to the current record in the foundset, and by setting it to List View, we get access to all the records in the foundset. To display data from the records, we insert fields or merge fields in our layout that reference the fields from the underlying table occurrence. I consider that to be one of the most powerful features in FileMaker; it provides data-binding for free.
+
+In Android, we have to code the data-binding ourselves. To show a list of items, the most efficient way to implement data-binding is using an Adapter. 
+
+>An Adapter object acts as a bridge between an AdapterView and the underlying data for that view. The Adapter provides access to the data items. The Adapter is also responsible for making a View for each item in the data set.
+>
+>[Source](https://developer.android.com/reference/android/widget/Adapter.html)
+
+Notice that an Adapter does two things. It provides access to the data items (in our case, the customer records), and is responsible for making a view for each item in the data set. We already created the "item_customer" layout. Now we have to make the Adapter create one of those layouts for each customer and populate it with the corresponding data. Just like FileMaker, when in Browse Mode, creates one Body part for each record in the foundset and populates the fields and merge fields with data from the table.
+
+#### The RecyclerView
+
+Android has different types of views to present lists of items. For this project, we will use the `RecyclerView`.
+
+>The RecyclerView widget is a more advanced and flexible version of ListView. This widget is a container for displaying large data sets that can be scrolled very efficiently by maintaining a limited number of views.
+>
+>[Source](https://developer.android.com/training/material/lists-cards.html#RecyclerView)
+
+To use the `RecyclerView`, we need to add a few dependencies to our app. Add the following lines to your `app/build.gradle` file and then click on *Sync Now*.
 
 ```java
     compile 'com.android.support:support-v4:25.0.0'
     compile 'com.android.support:recyclerview-v7:25.0.0'
 ```
 
+#### Implement the RecyclerView in `MainActivity`
+
+```xml
+Add the code here
+```
+
 #### Create the CustomerAdapter class
+
+First, create a new package to store our adapters.
+
+Then, create a new Java class inside the new package and name it CustomerAdapter.
+
+#### Create a ViewHolder inner class that extends RecyclerView.ViewHolder
+
+Now we're going to add the ViewHolder inner class to our CustomerAdapter. This class will extend the RecyclerView.ViewHolder class and we will use it to hold the views from the "item_customer" layout so we can reuse (or recycle) them as the user scrolls through our list.
+
+>A ViewHolder describes an item view and metadata about its place within the RecyclerView.
+> RecyclerView.Adapter implementations should subclass ViewHolder and add fields for caching potentially expensive findViewById(int) results.
+>
+>[Source](https://developer.android.com/reference/android/support/v7/widget/RecyclerView.ViewHolder.html)
+
+The ViewHolder originally was a technique developed by Android developers to improve the performance of `ListView`. The concept is to store a single reference to the individual views of your item layout, and then reuse them as the user scrolls up and down the list. The Android platform later incorporated the ViewHolder pattern into the `RecyclerView`.
+
+Let's create the ViewHolder inner class. 
 
 ```java
 public class CustomerAdapter {
@@ -26,13 +69,20 @@ public class CustomerAdapter {
     }
 }
 ```
+
+Later on, we will declare all the individual views of our item customer layout, that is, the name, company, and city views. And then inside the constructor, we will initialize the views by finding them on the layout by their ids.
+
 #### Extend RecyclerView.Adapter
+
+Now that we've implemented the ViewHolder inner class, let's our CustomerAdapter become a subclass of `RecyclerView.Adapter`.
 
 ```java
 public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHolder> {
     //...
 }
 ```
+
+Now you should see some red in your class, that's Android Studio warning you that you are missing some required methods to be able to extend `RecyclerView.Adapter`. Let me show you how to figure out what methods are needed and how to include them.
 
 #### Create the required Override methods
 
@@ -83,7 +133,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
 }
 ```
 
-#### The ViewHolder class
+#### Complete the ViewHolder inner class
 
 ```java
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -103,7 +153,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
 
 ```
 
-#### onCreateViewHolder
+#### Complete onCreateViewHolder
 
 ```java
     @Override
@@ -113,7 +163,9 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
         return new ViewHolder(view);
     }
 ```
-#### onBindViewHolder
+
+#### Complete onBindViewHolder
+
 ```java
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
