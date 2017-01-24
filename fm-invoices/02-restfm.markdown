@@ -5,7 +5,7 @@ title: Turn FileMaker Server into a JSON API with RESTfm
 permalink: fm-invoices-restfm.html
 ---
 
-We're going to use RESTfm because it can transform the XML output from the FileMaker Custom Web Publishing Engine into JSON, which is very easy to consume in Java. Also, because it allows us to create API Keys for our users, so our Android app doesn't have to pass the actual username and password of our FileMaker database file.
+We're going to use RESTfm because it can transform the XML output from the FileMaker Custom Web Publishing Engine into JSON, which is very easy to consume in Java, which is the programming language used to develop Android app. Also, RESTfm allows us to create API keys for our users, so our Android app don't have to pass the actual username and password to authenticate to our FileMaker database file.
 
 #### What is RESTfm?
 
@@ -23,7 +23,7 @@ Please follow the instructions to install RESTfm in your platform.
 
 [Install on MacOSx](http://www.restfm.com/restfm-manual/install/quick-install-apple-os-x)
 
-Continue once you complete the installation and the RESTfm report page indicates no errors.
+Once you complete the installation and the RESTfm report page indicates no errors you can continue with the tutorial.
 
 #### Create an API Key
 
@@ -49,6 +49,7 @@ $config['keys'] = array (
     '71c717c4-d8e3-485f-a815-f5928f1f7a3e' => array ('Jose', 'myPassword'),
 );
 ```
+
 #### Congratulations!
 
 You have successfully installed and configured RESTfm. Let's now host the FileMaker Server Sample file.

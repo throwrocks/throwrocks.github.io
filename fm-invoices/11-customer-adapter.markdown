@@ -5,7 +5,7 @@ title: Customer Adapter
 permalink: fm-invoices-customer-adapter
 ---
 
-In FileMaker, we display data using Layouts in different View Modes; Form View, List View, and Table View. By setting a Layout to Form View, we get access to the current record in the foundset, and by setting it to List View, we get access to all the records in the foundset. To display data from the records, we insert fields or merge fields that reference the fields from the underlying table occurrence. This is how I see it:
+In FileMaker, we display data using Layouts in different View Modes; Form View, List View, and Table View. By setting a Layout to Form View, we get access to the current record in the foundset, and by setting it to List View, we get access to all the records in the foundset. To display data from the records, we insert fields or merge fields that reference the fields from the underlying table occurrence. We can visualize it like this:
 
 ![FileMaker Views](http://throw.rocks/fm-invoices/11_customer_adapter/filemaker_views.png)
 
