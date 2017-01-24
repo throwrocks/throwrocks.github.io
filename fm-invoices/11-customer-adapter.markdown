@@ -5,17 +5,23 @@ title: Customer Adapter
 permalink: fm-invoices-customer-adapter
 ---
 
-#### Adapters
+In FileMaker, we display data using Layouts in different View Modes; Form View, List View, and Table View. By setting a Layout to Form View, we get access to the current record in the foundset, and by setting it to List View, we get access to all the records in the foundset. To display data from the records, we insert fields or merge fields that reference the fields from the underlying table occurrence. This is how I see it:
 
-In FileMaker, we display data using Layouts in different View Modes; Form View, List View, and Table View. By setting a Layout to Form View, we get access to the current record in the foundset, and by setting it to List View, we get access to all the records in the foundset. To display data from the records, we insert fields or merge fields in our layout that reference the fields from the underlying table occurrence. I consider that to be one of the most powerful features in FileMaker; it provides data-binding for free.
+![FileMaker Views](http://throw.rocks/fm-invoices/11_customer_adapter/filemaker_views.png)
 
 In Android, we have to code the data-binding ourselves. To show a list of items, the most efficient way to implement data-binding is using an Adapter. 
+
+#### Android Adapters
 
 >An Adapter object acts as a bridge between an AdapterView and the underlying data for that view. The Adapter provides access to the data items. The Adapter is also responsible for making a View for each item in the data set.
 >
 >[Source](https://developer.android.com/reference/android/widget/Adapter.html)
 
 Notice that an Adapter does two things. It provides access to the data items (in our case, the customer records), and is responsible for making a view for each item in the data set. We already created the "item_customer" layout. Now we have to make the Adapter create one of those layouts for each customer and populate it with the corresponding data. Just like FileMaker, when in Browse Mode, creates one Body part for each record in the foundset and populates the fields and merge fields with data from the table.
+
+Let's visualize how the Adapter will work in our app. I included the API class calling the FileMaker Server so you can see it in context. There's still some missing pieces but we will add them later when we work in our Loader.
+
+![Source](http://throw.rocks/fm-invoices/11_customer_adapter/customer_adapter_android_adapter.png)
 
 #### The RecyclerView
 
@@ -34,8 +40,25 @@ To use the `RecyclerView`, we need to add a few dependencies to our app. Add the
 
 #### Implement the RecyclerView in `MainActivity`
 
+In the previous section, we added several <include> tags in our `activity_main.xml` so we could test the `item_customer` layouts. We're going to remove those <include> elements and replace them with a `RecyclerView`. 
+
 ```xml
-Add the code here
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="rocks.athrow.fm_invoices.MainActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/customers_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager" />
+</LinearLayout>
 ```
 
 #### Create the CustomerAdapter class
