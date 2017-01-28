@@ -1,13 +1,13 @@
 ---
 layout: page
 comments: false
-title: Customer Adapter
+title: The Customer Adapter
 permalink: fm-invoices-customer-adapter
 ---
 
 In FileMaker, we display data using Layouts in different View Modes; Form View, List View, and Table View. By setting a Layout to Form View, we get access to the current record in the foundset, and by setting it to List View, we get access to all the records in the foundset. To display data from the records, we insert fields or merge fields that reference the fields from the underlying table occurrence. We can visualize it like this:
 
-![FileMaker Views](http://throw.rocks/fm-invoices/11_customer_adapter/filemaker_views.png)
+![FileMaker Views](http://throw.rocks/fm-invoices/12_customer_adapter/filemaker_views.png)
 
 In Android, we have to code the data-binding ourselves. To show a list of items, the most efficient way to implement data-binding is using an Adapter. 
 
@@ -21,7 +21,7 @@ Notice that an Adapter does two things. It provides access to the data items (in
 
 Let's visualize how the Adapter will work in our app. I included the API class calling the FileMaker Server so you can see it in context. There's still some missing pieces but we will add them later when we work in our Loader.
 
-![Source](http://throw.rocks/fm-invoices/11_customer_adapter/customer_adapter_android_adapter.png)
+![Source](http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_android_adapter.png)
 
 #### The RecyclerView
 
@@ -294,3 +294,12 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
     }
 }
 ```
+
+#### Congratulations!
+
+
+<br/>
+<hr/>
+<br/>
+
+Next: <a href="/fm-invoices-data-loader.html">The Customer Data Loader</a>

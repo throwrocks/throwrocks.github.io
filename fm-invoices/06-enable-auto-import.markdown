@@ -52,7 +52,7 @@ Make sure you don't copy my package declaration.
 package rocks.athrow.fm_invoices;
 ```
 
-Since you package name will probably be different, if you paste my package declaration your code will not compile.
+Since your package name will probably be different, if you paste my package declaration your code will not compile.
 
 #### Congratulations!
 

@@ -53,7 +53,7 @@ Let's get started. Create a new class inside the data package.
 
 ![Create a new class](http://throw.rocks/fm-invoices/08_data/data_04_create_new_class_api.png)
 
-Name the class APIResponse.
+Name the class `APIResponse`.
 
 ![Name APIResponse class](http://throw.rocks/fm-invoices/08_data/data_05_create_api_response.png)
 
@@ -138,9 +138,14 @@ public final class APIResponse {
 }
 
 ```
-
+This is all we need. Let's now create the API class. 
 
 #### Create the API class
+
+The API class is a different type of class. You can think of it as a Utility class. We will not use it to create objects. We will use it to hold our different API queries, to establish a connection to the FileMaker Server, and to create and return an APIResponse object that holds the server response.
+
+First, declare the class. Then, create two fields: API_HOST and API_KEY. Finally, create a constructor that throws an AssertionError. Since this is utility class, we don't allow creating objects it.
+
 
 ```java
 package rocks.athrow.fm_invoices.data;
@@ -154,6 +159,7 @@ public final class API {
     }
 }
 ```
+Fill in the values for your host and key. For example:
 
 ```java
     private static final String API_HOST = "http://myhost.com/RESTfm/sample_data/";
@@ -162,7 +168,9 @@ public final class API {
 
 #### Add the httpConnect method
 
-Add the following method to your API class.
+Now, let's add a method that handles connecting to our host and returning the response. 
+
+First, declare it as `private static`. Private, because only the API class will use it. And static, because it belongs to the class, not to an object of the class. Next, declare the return type as `APIResponse`. Which means that this method will return an `APIResponse` object that holds the server response. Then, name the method `httpConnect`. And finally, declare a `String` argument `queryUrl` which will be the complete URL that we will use to query our API (for example, http://throw.rocks/RESTfm/sample_date/layout/api_customers.json?RFMmax=1&RFMkey=71c717c4-d8e3-485f-a815-f5928f1f7a3e)
 
 ```java
 
@@ -210,14 +218,15 @@ Add the following method to your API class.
     }
 ```
 
-#### Create your first API method
+Don't worry about the nuts and bolts of it. This is a generic method use to query an HTTP host.
 
-The URI will look like this:
+#### getCustomers()
 
-`http://myhost.com/RESTfm/sample_data/layout/customers.json?RFMkey=MyAPIKey&RFMmax=0`
+Now let's create the first method that will query our API. This method will get our customer records. It will basically do three things:
 
-http://www.restfm.com/restfm-manual/web-api-reference-documentation/uri-restfmdatabaselayoutlayout/read-get
-
+1. Build the URL (`http://myhost.com/RESTfm/sample_data/layout/customers.json?RFMkey=MyAPIKey&RFMmax=0`)
+2. Pass it to httpConnect
+3. Return the APIResponse object from httpConnect
 
 ```java
     public static APIResponse getCustomers(int maxResults) {
@@ -225,3 +234,13 @@ http://www.restfm.com/restfm-manual/web-api-reference-documentation/uri-restfmda
         return httpConnect(url);
     }
 ```
+
+#### Congratulations!
+
+We now have a class with methods to query our FileMaker Server and return the response. Let's test it.
+
+<br/>
+<hr/>
+<br/>
+
+Next: <a href="/fm-invoices-unit-test-api.html">Test the API with a Unit test</a>

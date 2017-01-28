@@ -5,7 +5,7 @@ title: Introduction
 permalink: fm-invoices-introduction.html
 ---
 
-In this tutorial, you will learn how to turn your FileMaker Server into a JSON API, and how to develop an Android app that consumes the data from your FileMaker solution. This tutorial is aimed at FileMaker developers who want to learn Android. To complete this tutorial, you will need the following tools.
+In this tutorial, you will learn how to turn your FileMaker Server into a JSON API, and how to develop an Android app that consumes the data from your FileMaker solution. This tutorial is aimed at FileMaker developers who want (or need) to learn Android. To complete this tutorial, you will need the following tools.
 
 #### Requirements
 

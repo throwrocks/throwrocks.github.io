@@ -5,7 +5,7 @@ title: Turn FileMaker Server into a JSON API with RESTfm
 permalink: fm-invoices-restfm.html
 ---
 
-We're going to use RESTfm because it can transform the XML output from the FileMaker Custom Web Publishing Engine into JSON, which is very easy to consume in Java, which is the programming language used to develop Android app. Also, RESTfm allows us to create API keys for our users, so our Android app don't have to pass the actual username and password to authenticate to our FileMaker database file.
+We're going to use RESTfm because it can transform the XML output from the FileMaker Custom Web Publishing Engine into JSON, which is very easy to consume in Java, the programming language used to develop Android apps. Also, RESTfm allows us to create API keys for our users, so our Android app don't have to pass the actual username and password to authenticate to our FileMaker database file.
 
 #### What is RESTfm?
 

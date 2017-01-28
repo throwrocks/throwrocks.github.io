@@ -9,13 +9,13 @@ The Sample File is a copy of the FileMaker Pro 14 Invoices Starter Solution. I a
 
 If you need help hosting the file, you can consult the FileMaker Server documentation on [Uploading database files to FileMaker Server](http://help.filemaker.com/app/answers/detail/a_id/11957/~/uploading-database-files-to-filemaker-server).
 
-After you finish hosting the file, open it.
+Open the file after you finish hosting it.
 
 ![Customers List](http://throw.rocks/fm-invoices/03_host_sample_data/host_sample_data_01_filemaker_starter_solution.png)
 
 ### Create the API layouts 
 
-In FileMaker, you always have to specify a layout in your API calls. The result of your API call will contain all the records in the foundset, and all the fields placed on the specified layout. The layout is required whether you are creating, updating, finding or deleting records, or running a script. For this reason, I like to create layouts dedicated to my API. By doing so, I don't have to add unnecesary fields to the user Layouts, and I don't have to worry about removing a field by accident.
+When using FileMaker Custom Web Publishing, you always have to specify a layout in your API calls. The result of your API call will contain all the records in the foundset and all the fields placed on the specified layout. The layout is required whether you are creating, updating, finding or deleting records, or even when running a script. For this reason, I like to create layouts in the FileMaker file dedicated to the API. By doing so, I don't have to add unnecesary fields on the user Layouts, and I don't have to worry about removing an API field by accident.
 
 Let's open the Layout Manager and create a folder for the API layouts, and then create one layout for each table that our Android app will use. 
 
@@ -52,7 +52,7 @@ Each layout should have all the fields that your API will return. Let's start wi
 * Shipping Address
 * Shipping Address Short
 
-You can set your layout *View Mode* to Form, List, or Table. It doesn't make a different to the API. 
+You can set your layout *View Mode* to Form, List, or Table. It doesn't make a difference to the API. 
 
 ![The Customers API layout](http://throw.rocks/fm-invoices/03_host_sample_data/host_sample_data_03_api_customers_layout.png)
 
@@ -68,11 +68,11 @@ $config['keys'] = array (
 
 ![FileMaker Account](http://throw.rocks/fm-invoices/03_host_sample_data/host_sample_data_05_user.png)
 
-Notice that my account name is Jose and my password is MyPassword. So I create the account with the same name and password. By doing so, RESTfm will know that the API Key "71c717c4-d8e3-485f-a815-f5928f1f7a3e" belongs to Jose. And it will handle authenticating the user without having to provide the password.
+Notice that my account name is Jose and my password is MyPassword. So I create the account with the same name and password. By doing so, RESTfm will know that the API Key "71c717c4-d8e3-485f-a815-f5928f1f7a3e" belongs to Jose. And it will handle authenticating the user without having to provide the user name and password.
 
 #### Add the fmphp Extended Privilege
 
-We're almost ready to test our API. Just one more step. We need to add the fmphp *Extended Privilege* to the *Privilege Set* of the API user that we set in the $config['keys'] variable of our RESTfm.ini.php file.
+We're almost ready to test our API. Just one more step. We need to add the fmphp *Extended Privilege* to the Privilege Set of the API user that we set in the $config['keys'] variable of our RESTfm.ini.php file.
 
 In my case, the user Jose has the [Data Entry Only] Privilege Set. So I'm adding the fmphp Extended Privilege to that Privilege Set.
 
@@ -81,7 +81,7 @@ In my case, the user Jose has the [Data Entry Only] Privilege Set. So I'm adding
 
 #### Testing the API from the browser
 
-Great, now we will query our API from the browser to get the first record of the customers table.
+Great, now we will query the API from the browser to get the first record of the customers table.
 
 Build the URL using this format:
 
@@ -345,7 +345,7 @@ And your browser should respond with the following output:
 }
 ```
 
-I know there's a lot of information in the response. But don't worry about it. We'll parse it out later. Let's install Android Studio so we can start developing the Android app.
+There's a lot of information in the response. But don't worry about it. We'll parse it out later. Let's install Android Studio first so we can start developing the Android app.
 
 ### Congratulations!
 
