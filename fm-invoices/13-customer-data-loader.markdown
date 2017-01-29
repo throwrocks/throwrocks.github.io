@@ -5,7 +5,14 @@ title: Data Loader
 permalink: fm-invoices-data-loader
 ---
 
-### Create the DataLoader Class
+#### The Data Loader Process
+
+[![Data Loader Process][1]][1]
+
+[1]: http://throw.rocks/fm-invoices/13_data_loader/data_loader_01_process.png
+
+
+#### Create the DataLoader Class
 
 
 ```java
@@ -99,3 +106,12 @@ public class MainActivity extends AppCompatActivity
         app:layoutManager="LinearLayoutManager" />
 </LinearLayout>
 ```
+
+#### Congratulations!
+
+
+<br/>
+<hr/>
+<br/>
+
+Next: <a href="/fm-invoices-data-loader.html">New Activity via Intent</a>
