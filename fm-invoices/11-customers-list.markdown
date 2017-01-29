@@ -36,7 +36,21 @@ Notice that our parent layout is a horizontal `LinearLayout` with three children
 
 #### Download The arrow icon 
 
-//
+Download the icon: https://material.io/icons/#ic_keyboard_arrow_right
+
+[![Download the icon][10]][10]
+
+[10]: http://throw.rocks/fm-invoices/11_customer_list/customer_list_10_download_arrow_icon.png
+
+
+[![Copy the drawable folders][12]][12]
+
+[12]: http://throw.rocks/fm-invoices/11_customer_list/customer_list_11_copy_the_drawable_folders.png
+
+[![res/drawable][11]][11]
+
+[11]: http://throw.rocks/fm-invoices/11_customer_list/customer_list_11_res_drawables.png
+
 
 #### Create the "item_customer.xml" file 
 
@@ -47,6 +61,12 @@ In Android, we store layout files in the `app/main/res/layout` folder. Let's cre
 Name it "item_customer" and click *Ok*.
 
 ![Create Customer Item Layout](http://throw.rocks/fm-invoices/11_customer_list/customer_list_03_name_layout.png)
+
+Now the change the layout view from *Design* mode to *Text* mode. We will design our layout in XML so we can learn how it works under the hood.
+
+[![Change to Text mode][13]][132]
+
+[13]: http://throw.rocks/fm-invoices/11_customer_list/customer_list_12_text_mode.png
 
 Now copy the code below in your new layout. I added color, padding and margin so we can see how the individual views are rendered on the screen.
 

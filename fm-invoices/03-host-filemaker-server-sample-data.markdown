@@ -36,7 +36,9 @@ Each layout should have all the fields that your API will return. Let's start wi
 * Customer Info
 * Office Phone
 * Mobile Phone
+* Fax
 * Office Email
+* Home Email
 * Address 1
 * City
 * State
@@ -51,8 +53,6 @@ Each layout should have all the fields that your API will return. Let's start wi
 * Country Shipping
 * Shipping Address
 * Shipping Address Short
-
-You can set your layout *View Mode* to Form, List, or Table. It doesn't make a difference to the API. 
 
 ![The Customers API layout](http://throw.rocks/fm-invoices/03_host_sample_data/host_sample_data_03_api_customers_layout.png)
 
@@ -174,7 +174,21 @@ And your browser should respond with the following output:
          "resultType":"text"
       },
       {  
+         "name":"Fax",
+         "autoEntered":0,
+         "global":0,
+         "maxRepeat":1,
+         "resultType":"text"
+      },
+      {  
          "name":"Office Email",
+         "autoEntered":0,
+         "global":0,
+         "maxRepeat":1,
+         "resultType":"text"
+      },
+      {  
+         "name":"Home Email",
          "autoEntered":0,
          "global":0,
          "maxRepeat":1,
@@ -298,7 +312,9 @@ And your browser should respond with the following output:
          "Customer Info":"James Butt",
          "Office Phone":"504-621-8927",
          "Mobile Phone":"504-845-1427",
+         "Fax":"",
          "Office Email":"jbutt@gmail.com",
+         "Home Email":"",
          "Address 1":"6649 N Blue Gum St",
          "City":"New Orleans",
          "State":"LA",
@@ -316,8 +332,8 @@ And your browser should respond with the following output:
       }
    ],
    "info":{  
-      "tableRecordCount":"500",
-      "foundSetCount":"500",
+      "tableRecordCount":"502",
+      "foundSetCount":"502",
       "fetchCount":"1",
       "skip":0,
       "X-RESTfm-Version":"4.0.1\/20160322-b72e584",
@@ -339,7 +355,7 @@ And your browser should respond with the following output:
       },
       {  
          "name":"end",
-         "href":"\/RESTfm\/sample_data\/layout\/api_customers.json?RFMmax=1&RFMkey=71c717c4-d8e3-485f-a815-f5928f1f7a3e&RFMskip=499"
+         "href":"\/RESTfm\/sample_data\/layout\/api_customers.json?RFMmax=1&RFMkey=71c717c4-d8e3-485f-a815-f5928f1f7a3e&RFMskip=501"
       }
    ]
 }
