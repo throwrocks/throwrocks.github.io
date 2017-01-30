@@ -55,6 +55,7 @@ permalink: fm-invoices-customer-details
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:orientation="horizontal">
 
             <ImageButton
@@ -62,28 +63,28 @@ permalink: fm-invoices-customer-details
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_email_black_24dp"
-                android:tint="#9E9E9E" />
+                android:tint="#424242" />
 
             <ImageButton
                 android:id="@+id/customer_detail_button_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_phone_black_24dp"
-                android:tint="#9E9E9E" />
+                android:tint="#424242" />
 
             <ImageButton
                 android:id="@+id/customer_detail_button_web"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_web_black_24dp"
-                android:tint="#9E9E9E" />
+                android:tint="#424242" />
 
             <ImageButton
                 android:id="@+id/customer_detail_button_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_location_on_black_24dp"
-                android:tint="#9E9E9E" />
+                android:tint="#424242" />
         </LinearLayout>
 
         <View
@@ -118,6 +119,7 @@ permalink: fm-invoices-customer-details
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <TextView
@@ -140,6 +142,7 @@ permalink: fm-invoices-customer-details
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <TextView
@@ -236,6 +239,7 @@ permalink: fm-invoices-customer-details
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <TextView
@@ -258,6 +262,7 @@ permalink: fm-invoices-customer-details
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <TextView
@@ -309,6 +314,7 @@ permalink: fm-invoices-customer-details
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <TextView
@@ -362,7 +368,7 @@ permalink: fm-invoices-customer-details
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <TextView
@@ -385,7 +391,7 @@ permalink: fm-invoices-customer-details
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <TextView
@@ -408,7 +414,7 @@ permalink: fm-invoices-customer-details
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <TextView
@@ -431,7 +437,7 @@ permalink: fm-invoices-customer-details
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <TextView
@@ -454,7 +460,7 @@ permalink: fm-invoices-customer-details
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <TextView
@@ -503,3 +509,11 @@ permalink: fm-invoices-customer-details
 
 [4]: http://throw.rocks/fm-invoices/15_customer_details/customer_details_04_test_layout.png
 
+
+#### Congratulations!
+
+<br/>
+<hr/>
+<br/>
+
+Next: <a href="/fm-invoices-intent-extras.html">Setting the Customer Details via Intent</a>

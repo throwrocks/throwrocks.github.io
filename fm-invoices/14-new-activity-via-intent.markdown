@@ -187,6 +187,16 @@ Modify usage of the constructor.
 
 ![Test Customer Details](http://throw.rocks/fm-invoices/14_new_activity/new_activity_06_test_customer_details.png)
 
+
+#### SingleTop
+
+```xml
+ <activity
+            android:name=".activity.CustomersListActivity"
+            android:label="Customers List"
+            android:launchMode="singleInstance">
+```
+
 #### Congratulations!
 
 
@@ -194,4 +204,4 @@ Modify usage of the constructor.
 <hr/>
 <br/>
 
-Next: <a href="/fm-invoices-data-loader.html">The Customer Details Layout</a>
+Next: <a href="/fm-invoices-customer-details.html">The Customer Details Layout</a>

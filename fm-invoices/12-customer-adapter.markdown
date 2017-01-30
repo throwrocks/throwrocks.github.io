@@ -127,42 +127,72 @@ Now you should see some red in your class, that's Android Studio warning you tha
 
 #### Create the required Override methods
 
-Because we are subclassing `RecyclerView.Adapter`, we need to implemenet certain required methods.
+Because we are subclassing `RecyclerView.Adapter`, we need to implement some required methods. I will show you how to figure out what methods are required by using the Android Studio warnings. 
+
+You will see that the class name is now underlined in red. If you hover your mouse over it, you will see a message that says "Class CustomerAdapter must either be declared abstract of implement abstract method `onBindViewHolder(VH, int)` in 'Adapter'`.
 
 [![Required OnBindViewHolder][6]][6]
     
 [6]: http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_06_required_onbindviewholder.png
 
+Right click on the editor, then click *Generate*.
 
 [![Generate][7]][7]
 
 [7]: http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_07_generate.png
 
+Click on *Override Methods*.
 
-[![Generate OnBindViewHolder][8]][8]
+[![Override Methods][8]][8]
 
 [8]: http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_08_override_methods.png
 
+Then select `onBindViewHolder(VH, int)` and click *Ok*.
+[![Generate OnBindViewHolder][9]][9]
 
-[![Required GetItemCount][9]][9](
+Now you will see that Android Studio added the  `onBindViewHolder()` method. Click on the class name and you will see that now you need to implement `getItemCount()`.
+
+[9]: http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_09_generate_onbindviewholder.png
+
+[![Required GetItemCount][10]][10]
     
-[9]: http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_10_required_getitemcount.png
+[10]: http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_10_required_getitemcount.png
 
-[![Generate GetItemCount][10]][10]
+Right click on the editor, click on *Generate*, then *Override Methods* and select `getItemCount()`.
 
-[10]: http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_11_generate_getitemcount.png.png
+[![Generate GetItemCount][11]][11]
+
+[11]: http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_11_generate_getitemcount.png.png
+
+Hover over the class name again and you will see that you need to implement `onCreateViewHolder(ViewGroup, int)`.
 
 ![Required OnCreateViewHolder](http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_12_required_oncreateviewholder.png)
 
+Right click on the editor, click on *Generate*, then *Override Methods* and select `onCreateViewHolder(ViewGroup, int)`.
+
 ![Generate OnCreateViewHolder](http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_13_generate_oncreateviewholder.png.png)
+
+Now you will see that the warning is gone. That means that your class has all the required components. It should look like this:
 
 ![All Required Methods](http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_14_all_required_methods.png.png)
 
 #### Create the constructor
 
-Add the field mCustomers field.
+Since our adapter will need the customer data to set the views, we need to create a class variable to hold it. Let's add a `JSONArray` private field named `mCustomers` to our class:
+
+```java
+public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHolder> {
+    private JSONArray mCustomers;
+    ....
+```
+
+Now let's create a constructor. You can add a constructor by right clicking on the editor, clicking on *Generate*, then *Constructor*.
+
+Select the `mCustomers field and click *Ok*.
 
 ![Generate Constructor](http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_15_constructor.png)
+
+Your constructor should look like this:
 
 ```java
     public CustomerAdapter(JSONArray mCustomers) {
@@ -170,18 +200,24 @@ Add the field mCustomers field.
     }
 ```
 
+You can also write your constructor from scratch without using the *Generate* function.
+
+
 #### The CustomerAdapter template
 
-Now we have all the components that we need to implement the adapter. Your class should look like this.
+At this point we have the entire structure of our adapter class. It should look like this:
 
 ```java
 public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHolder> {
+   // A variable to store the customers data
    private JSONArray mCustomers;
-
+   
+   // The constructor to create CustomerAdapter objects
    public CustomerAdapter(JSONArray customers) {
         this.mCustomers = customers;
     }
 
+    // The ViewHolder class to hold references to our views
     public class ViewHolder extends RecyclerView.ViewHolder {
         // TODO: Declare views
         public ViewHolder(View view) {
@@ -190,16 +226,19 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
         }
     }
 
+    // A method to bind the views with the customers data
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
     }
 
+    // A method to get the number of records in our data set
     @Override
     public int getItemCount() {
         return 0;
     }
 
+    // A method to create a ViewHolder object
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return null;
@@ -246,48 +285,76 @@ Also, notice the usage of `R.id`.
 >
 >[Source](https://developer.android.com/guide/topics/resources/accessing-resources.html)
 
-In other words, all the resource ids, like your view ids, are stored in a generated class called `R`. You can reference those ids through this class.
+In other words, all the resource ids, like your view ids, are stored in a generated class called `R`. You can then reference the ids through the `R` class.
 
-Now, let's look at the `ViewHolder` and the `item_customer` layout side by side so you can see the relationship.
+Now, let's look at the `ViewHolder` and the `item_customer` layout side by side so you can see how they relate to each other.
 
 ![ViewHolder references our Layout](http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_16_data_binding.png)
 
-#### Complete onCreateViewHolder
+#### OnCreateViewHolder
+
+This method will "inflate" the `item_customer.xml` layout and use the resulting `View` object to create a `ViewHolder` object. It's important to note that Android doesn't render the UI from the XML directly. It uses the XML to create view objects and then renders the UI from them. See the documentation on `LayoutInflater`.
+
+>##### LayoutInflater
+>
+>Instantiates a layout XML file into its corresponding View objects. 
+>
+>[Source](https://developer.android.com/reference/android/view/LayoutInflater.html)
+
+Here our complete method.
 
 ```java
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        // Create a new View variable and set it to the result of inflating the item_customer.xml layout.
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_customer, parent, false);
+        // Create a new ViewHolder object using the view variable and return it
         return new ViewHolder(view);
     }
 ```
+Let's step through it. First, we create the `View` variable `view` and set it to the resulting `View` object of the `LayoutInflate.inflate()` method. We pass the `item_customer.xml` layout as an argument to the `inflate()` method. Finally, we return a new `ViewHolder` object created from the `view` variable.
 
-#### Complete onBindViewHolder
+
+#### OnBindViewHolder
+
+This method handles the data-binding.
 
 ```java
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         try {
+            // Get the customer record
             holder.customerRecord = mCustomers.getJSONObject(position);
+            // Set the variables for our views
             String company = holder.customerRecord.getString("Company");
             String firstName = holder.customerRecord.getString("First");
             String lastName = holder.customerRecord.getString("Last");
             String city = holder.customerRecord.getString("City");
+            // Set out views using the variables
             holder.companyView.setText(company);
             holder.nameView.setText(firstName + " " + lastName);
             holder.cityView.setText(city);
+            // In case we can't parse the JSON, throw an exception
         } catch (JSONException e) {
             Log.e(CustomerAdapter.class.getName(), "Error: " + e);
         }
     }
 ```
 
+First, we set the `customerRecord` field to the `JSONObject` in the current position. We use `getJSONObject()`, the same method we used to parse the JSON in the Unit test. Then, we set all the variables that we need by using the `getString` method and passing the corresponding field names - like "Company", "First", "Last", etc. After setting the variables, we set the views with them. We use the `setText()` method to set the data in the views.
+
+#### getItemCount()
+
+This method simply returns the number of records in our data set. This is how the adapter knows how many times to iterate through our data set.
+
 ```java
     @Override
     public int getItemCount() {
+        // If the mCustomers variable is null, the count is 0
         if (mCustomers == null) {
             return 0;
+        // Otherwise, get the mCustomers length
         } else {
             return mCustomers.length();
         }
@@ -295,6 +362,9 @@ Now, let's look at the `ViewHolder` and the `item_customer` layout side by side 
 ```
 
 #### The complete CustomerAdapter
+
+After filling in all the methods, your complete class should look like this:
+
 ```java
 package rocks.athrow.fm_invoices.adapter;
 
@@ -310,10 +380,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import rocks.athrow.fm_invoices.R;
-
-/**
- * Created by jose on 1/22/17.
- */
 
 public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHolder> {
     private JSONArray mCustomers;
@@ -372,6 +438,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
 
 #### Congratulations!
 
+You have completed an Adapter class that will allow you to bind the data from FileMaker with the views in your Customers List. Let's now develop a `Data Loader`, the class that will call the API and pass the data to the Adapter.
 
 <br/>
 <hr/>

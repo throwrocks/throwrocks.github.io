@@ -1,7 +1,7 @@
 ---
 layout: page
 comments: false
-title: From List to Detail via Intent
+title: Setting the Customer Details via Intent
 permalink: fm-invoices-intent-extras
 ---
 
@@ -40,6 +40,7 @@ permalink: fm-invoices-intent-extras
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent(mContext, CustomerDetailsActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.putExtra("Company", company);
                     intent.putExtra("Customer Name", fullName);
                     intent.putExtra("City", city);
@@ -169,3 +170,11 @@ permalink: fm-invoices-intent-extras
 [![Set the customer detail views][2]][2]
 
 [2]: http://throw.rocks/fm-invoices/16_intent/intent_02_set_customer_details_data.png
+
+#### Congratulations!
+
+<br/>
+<hr/>
+<br/>
+
+Next: <a href="/fm-invoices-common-intents.html">Common Intents: Send Email, Dial Phone Number, Open Website, and Show Maps</a>

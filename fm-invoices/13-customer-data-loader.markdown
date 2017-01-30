@@ -114,4 +114,4 @@ public class MainActivity extends AppCompatActivity
 <hr/>
 <br/>
 
-Next: <a href="/fm-invoices-data-loader.html">New Activity via Intent</a>
+Next: <a href="/fm-invoices-new-activity-via-intent.html">New Activity via Intent</a>
