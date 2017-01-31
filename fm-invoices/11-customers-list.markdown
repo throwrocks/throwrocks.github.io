@@ -36,16 +36,29 @@ Notice that our parent layout is a horizontal `LinearLayout` with three children
 
 #### Download The arrow icon 
 
-Download the icon: https://material.io/icons/#ic_keyboard_arrow_right
+You can download the arrow icons from the Material Design Icons website. Here is the link [Material Design Arrow Icon](https://material.io/icons/#ic_keyboard_arrow_right)
 
 [![Download the icon][10]][10]
 
 [10]: http://throw.rocks/fm-invoices/11_customer_list/customer_list_10_download_arrow_icon.png
 
+After you download and unzip the icons, you will notice that it contains five versions, each stored in their own folder. These folders correspond to the main different screen densities found in Android devices. 
+
+* mdpi (medium) ~160dpi
+* hdpi (high) ~240dpi
+* xhdpi (extra-high) ~320dpi
+* xxhdpi (extra-extra-high) ~480dpi
+* xxxhdpi (extra-extra-extra-high) ~640dpi
+
+By providing the icon at different densities, Android will load the corresponding version according to the device it's running on. This way you ensure that your icon will look good across devices with multiples with densities.
+
+You can drag and drop and all these folders into the `app/src/main/res/` directory of your project.
 
 [![Copy the drawable folders][12]][12]
 
 [12]: http://throw.rocks/fm-invoices/11_customer_list/customer_list_11_copy_the_drawable_folders.png
+
+After you copy the folders, your drawables folder in Android Studio should look like this:
 
 [![res/drawable][11]][11]
 
@@ -54,7 +67,7 @@ Download the icon: https://material.io/icons/#ic_keyboard_arrow_right
 
 #### Create the "item_customer.xml" file 
 
-In Android, we store layout files in the `app/main/res/layout` folder. Let's create a new file there:
+In Android, we store layout files in the `app/res/main/layout` folder. Let's create a new file there:
 
 ![Create Customer Item Layout](http://throw.rocks/fm-invoices/11_customer_list/customer_list_02_create_layout.png)
 
@@ -153,7 +166,7 @@ If we look at the emulator we will see that our views are positioned correctly, 
 
 ![Run the app](http://throw.rocks/fm-invoices/11_customer_list/customer_list_05_first_run.png)
 
-We want our views to fill the screen. However, we don't to hard-code specific dimension values because if we run the app in devices with different resolutions and densities it will not look good. In FileMaker, we can use anchors to make our views stick, float, or grow to fill the layout. In Android, when using `LinearLayout` we can use the `weight` attribute to make our layout responsive.
+We want our views to fill the screen. However, we don't want to hard-code specific dimension values because if we run the app in devices with different resolutions and densities it will not look good. In FileMaker, we can use anchors to make our views stick, float, or grow to fill the layout. In Android, when using `LinearLayout` we can use the `weight` attribute to make our layout responsive.
 
 >LinearLayout also supports assigning a weight to individual children with the android:layout_weight attribute. This attribute assigns an "importance" value to a view in terms of how much space it should occupy on the screen. A larger weight value allows it to expand to fill any remaining space in the parent view.
 >

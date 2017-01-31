@@ -1,8 +1,8 @@
 ---
 layout: page
 comments: false
-title: The Address Toggle, Wrapping Up
-permalink: fm-invoices-address-toggle-wrapping-up
+title: The Address Toggle
+permalink: fm-invoices-address-toggle
 ---
 
 #### The Address toggle
