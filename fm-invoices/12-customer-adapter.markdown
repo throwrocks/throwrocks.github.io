@@ -246,7 +246,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
 }
 ```
 
-Now let's flesh out `ViewHolder` class and the required methods and explain what their purpose is.
+Now let's flesh out the `ViewHolder` class and the required methods and explain what their purpose is.
 
 #### Complete the ViewHolder inner class
 
@@ -269,7 +269,7 @@ First, we declare the class fields. We need fields for our views, and a field fo
     }
 ```
 
-Finally, we initialize the views in the constructor. Notice that the constructor accepts a `View` object. That `View` object will be an instance of our `item_customer` layout. To initialize our view variables, we use the `findviewById()` method on the `View` object. 
+Finally, we initialize the views in the constructor. Notice that the constructor accepts a `View` object. That `View` object will be an instance of our `item_customer` layout. To initialize the individual view variables, we use the `findviewById()` method on the `View` object. 
 
 >##### findViewById()
 >
@@ -281,13 +281,13 @@ Also, notice the usage of `R.id`.
 
 >##### R.id
 >
->When your application is compiled, aapt generates the R class, which contains resource IDs for all the resources in your res/ directory.
+>When your application is compiled, it generates the R class, which contains resource IDs for all the resources in your `res` directory.
 >
 >[Source](https://developer.android.com/guide/topics/resources/accessing-resources.html)
 
-In other words, all the resource ids, like your view ids, are stored in a generated class called `R`. You can then reference the ids through the `R` class.
+In other words, all the resource ids, like your view ids, are stored in a system generated class called `R`. You can then reference the resource ids through this class.
 
-Now, let's look at the `ViewHolder` and the `item_customer` layout side by side so you can see how they relate to each other.
+Now, let's look at the `ViewHolder` and the `item_customer` layout side by side so you can see how they relate to each other. Notice that each `findViewById()` call references the id of a specific `TextView`.
 
 ![ViewHolder references our Layout](http://throw.rocks/fm-invoices/12_customer_adapter/customer_adapter_16_data_binding.png)
 
@@ -301,7 +301,7 @@ This method will "inflate" the `item_customer.xml` layout and use the resulting 
 >
 >[Source](https://developer.android.com/reference/android/view/LayoutInflater.html)
 
-Here our complete method.
+Here is the complete method.
 
 ```java
     @Override
@@ -315,10 +315,9 @@ Here our complete method.
 ```
 Let's step through it. First, we create the `View` variable `view` and set it to the resulting `View` object of the `LayoutInflate.inflate()` method. We pass the `item_customer.xml` layout as an argument to the `inflate()` method. Finally, we return a new `ViewHolder` object created from the `view` variable.
 
-
 #### OnBindViewHolder
 
-This method handles the data-binding.
+This method handles binding the data with the views stored in the `ViewHolder` object. It will be called once per each record in your data set.
 
 ```java
     @Override
@@ -342,11 +341,11 @@ This method handles the data-binding.
     }
 ```
 
-First, we set the `customerRecord` field to the `JSONObject` in the current position. We use `getJSONObject()`, the same method we used to parse the JSON in the Unit test. Then, we set all the variables that we need by using the `getString` method and passing the corresponding field names - like "Company", "First", "Last", etc. After setting the variables, we set the views with them. We use the `setText()` method to set the data in the views.
+First, we set the `customerRecord` field to the `JSONObject` in the current position of the `mCustomers` `JSONArray` object. We use the `getJSONObject()` method to parse the `JSONArray`, like we did in the Unit test. Then, we set all the variables that we need by using the `getString` method and passing the corresponding field names - like "Company", "First", "Last", etc. After setting the variables, we set the views with them. We use the `setText()` method to set the data in the views.
 
 #### getItemCount()
 
-This method simply returns the number of records in our data set. This is how the adapter knows how many times to iterate through our data set.
+This method simply returns the number of records in our data set. This is how the adapter knows how many times to iterate through our data set to call `OnBindViewHolder`.
 
 ```java
     @Override
@@ -438,7 +437,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.ViewHo
 
 #### Congratulations!
 
-You have completed an Adapter class that will allow you to bind the data from FileMaker with the views in your Customers List. Let's now develop a `Data Loader`, the class that will call the API and pass the data to the Adapter.
+You have completed an Adapter class that will allow you to bind the data from FileMaker with the views in your Customers List. Let's now develop a `Data Loader`, the class that will call the API and pass the data to the `Adapter`.
 
 <br/>
 <hr/>

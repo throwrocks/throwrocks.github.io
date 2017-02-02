@@ -262,7 +262,7 @@ Finally, let's write a test that loops through the array. This is crucial becaus
 
 ```java
     @Test
-    public void validateAllCustomerRecord() {
+    public void validateAllCustomerRecords() {
         APIResponse apiResponse;
         apiResponse = API.getCustomers(0);
         int responseCode = apiResponse.getResponseCode();

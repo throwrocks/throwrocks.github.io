@@ -318,8 +318,22 @@ As a final test, let's add multiple includes to the `activity_main` layout so we
 
 ![Run the app](http://throw.rocks/fm-invoices/11_customer_list/customer_list_09_final.png)
 
+#### How did Android display the layout?
+
+When you run the app in Android Studio, it compiles the app, creates an APK file, and installs it in the device (or emulator). When the app runs in the device, it runs the `LAUNCHER` `Activity`, which in our app is the `MainActivity`. Then `MainActivity` runs the `onCreate()` method. In which it runs the `setContentView()` method. Notice that it's already set up to pass the `activity_main` layout to the `setContentView()` method.
+
+```java
+ @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // Set the activity content from a layout file
+        setContentView(R.layout.activity_main);
+    }
+```
+
 #### Congratulations!
 
+Now that we have a working Customer List layout, let's work on populating it with data from the FileMaker API.
 
 <br/>
 <hr/>
