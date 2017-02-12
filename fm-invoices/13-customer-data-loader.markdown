@@ -62,7 +62,7 @@ Finally, we need to add a constructor because we will need to instantiate (creat
 
 This is where all the action happens.
 
-> #### LoaderManager()
+> ##### LoaderManager()
 > 
 >Called on a worker thread to perform the actual load and to return the result of the load operation.
 >

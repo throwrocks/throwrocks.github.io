@@ -89,7 +89,7 @@ Build the URL using this format:
 
 For example:
 
-`http://throw.rocks/RESTfm/sample_date/layout/api_customers.json?RFMmax=1&RFMkey=71c717c4-d8e3-485f-a815-f5928f1f7a3e`
+`http://throw.rocks/RESTfm/sample_data/layout/api_customers.json?RFMmax=1&RFMkey=71c717c4-d8e3-485f-a815-f5928f1f7a3e`
 
 And your browser should respond with the following output:
 
